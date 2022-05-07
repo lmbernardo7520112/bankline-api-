@@ -12,10 +12,11 @@ public class Movimentacao {
 
     @Column(name = "data_hora")
     private LocalDateTime dataHora;
+
     private String descricao;
     private Double valor;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private MovimentacaoTipo tipo;
 
     public Integer getId() {
