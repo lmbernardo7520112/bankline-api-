@@ -1,12 +1,14 @@
 package com.dio.santanderlmb.bankline.api.model.com.dio.santander.bankline.api.controller;
 
 
+import com.dio.santanderlmb.bankline.api.model.com.dio.santander.bankline.api.dto.NovaMovimentacao;
 import com.dio.santanderlmb.bankline.api.model.com.dio.santander.bankline.api.dto.NovoCorrentista;
 import com.dio.santanderlmb.bankline.api.model.com.dio.santander.bankline.api.model.Correntista;
 import com.dio.santanderlmb.bankline.api.model.com.dio.santander.bankline.api.model.Movimentacao;
 import com.dio.santanderlmb.bankline.api.model.com.dio.santander.bankline.api.repository.CorrentistaRepository;
 import com.dio.santanderlmb.bankline.api.model.com.dio.santander.bankline.api.repository.MovimentacaoRepository;
 import com.dio.santanderlmb.bankline.api.model.com.dio.santander.bankline.api.service.CorrentistaService;
+import com.dio.santanderlmb.bankline.api.model.com.dio.santander.bankline.api.service.MovimentacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +21,9 @@ public class MovimentacaoController {
     @Autowired
     private MovimentacaoRepository repository;
 
+    @Autowired
+    private MovimentacaoService service;
+
 
 
     @GetMapping
@@ -27,8 +32,8 @@ public class MovimentacaoController {
     }
 
     @PostMapping
-    public void save(@RequestBody NovoCorrentista correntista) {
-        service.save(correntista);
+    public void save(@RequestBody NovaMovimentacao movimentacao) {
+        service.save(movimentacao);
 
     }
 }

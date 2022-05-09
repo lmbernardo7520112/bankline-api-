@@ -7,13 +7,10 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
 public class NovaMovimentacao {
+
     private String descricao;
     private Double valor;
-
-
     private MovimentacaoTipo tipo;
-
-
     private Integer idConta;
 
     public String getDescricao() {
